@@ -20,4 +20,4 @@ I was given a basic flask app python file with url routes defined, html files cr
 
 ## To Do
 
-The styling could use improvement
+The styling could use improvement. Additional routes could be created to handle editing or deleting songs and playlists.
