@@ -1,7 +1,23 @@
 {% extends 'base.html' %}
 
+{% block page_title %} New Playlist {% endblock %}
+
 {% block content %}
 
-<h1>Add a form that when submitted creates a new playlist!</h1>
+<h1>Create Playlist</h1>
+<form action="#" method="POST">
+    <!-- Inserts hidden the generated csrf token -->
+    {{ form.hidden_tag() }}
+
+    {% for field in form if field.widget.input_type != 'hidden' %}
+        {{ field.label }}
+        {{field}}
+        <!-- Displays the forms message if input has a validation error. Found in forms.py -->
+        {% for error in field.errors %}
+            {{ error }}
+        {% endfor %}
+    {% endfor %}
+    <button>Submit</button>
+</form>
 
 {% endblock %}

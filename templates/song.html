@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% block page_title %} Song Info {% endblock %}
+
 {% block content %}
 
 <div class="jumbotron">
@@ -8,7 +10,10 @@
 </div>
 
 <ul>
-  DISPLAY ALL OF THE PLAYLISTS THAT THIS SONG IS A PART OF
+  <h2>Playlist(s):</h2>
+  {% for list in song.playlist %}
+    <li><a href="/">{{list.name}}</a></li>
+  {% endfor %}
 </ul>
 
 {% endblock %}

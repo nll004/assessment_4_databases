@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% block page_title %} Playlist Info {% endblock %}
+
 {% block content %}
 
 <div class="jumbotron">
@@ -10,8 +12,19 @@
 </div>
 
 
-<div class="text-danger">
-  SHOW ALL OF THE SONGS IN THIS PLAYLIST HERE
+<div>
+  <ul>
+    <h2>Song(s):</h2>
+    {% for song in playlist.songs %}
+    <li>
+      <a href="/songs/{{song.id}}">{{song.title}}</a>
+    </li>
+    {% endfor %}
+
+    {% if not playlist.songs %}
+      <p>You should add some songs to your playlist!</p>
+    {% endif %}
+  </ul>
 </div>
 
 <p>
